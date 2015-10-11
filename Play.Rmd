@@ -1,0 +1,21 @@
+---
+title: "Predict how well Dumbbell Curls are performed"
+output: html_document
+---
+```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+# make this an external chunk that can be included in any file
+options(width = 100)
+knitr::opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
+
+options(xtable.type = 'html')
+knitr::knit_hooks$set(inline = function(x) {
+  if(is.numeric(x)) {
+    round(x, getOption('digits'))
+  } else {
+    paste(as.character(x), collapse = ', ')
+  }
+})
+knitr::knit_hooks$set(plot = knitr:::hook_plot_html)
+```
+
+The data for this project comes from The data for this project come from this source: http://groupware.les.inf.puc-rio.br/har.
